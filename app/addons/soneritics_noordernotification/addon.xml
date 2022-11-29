@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>soneritics_noordernotification</id>
+    <name>Soneritics No-Order-Notifications</name>
+    <version>1.0</version>
+    <default_language>nl</default_language>
+    <priority>1000</priority>
+    <status>active</status>
+    <has_icon>Y</has_icon>
+    <settings>
+        <sections>
+            <section id="general">
+                <items>
+                    <item id="apikey">
+                        <name>Messagebird.com API Key</name>
+                        <type>input</type>
+                        <default_value></default_value>
+                    </item>
+                    <item id="phone">
+                        <name>Phone number of the receiver</name>
+                        <type>input</type>
+                        <default_value></default_value>
+                    </item>
+                    <item id="originator">
+                        <name>Name of the originator (max 11 characters)</name>
+                        <type>input</type>
+                        <default_value></default_value>
+                    </item>
+                    <item id="notify_after_daytime">
+                        <name>Minutes after which to notify (between 06:00 - 01:00)</name>
+                        <type>input</type>
+                        <default_value>30</default_value>
+                    </item>
+                    <item id="notify_after_night">
+                        <name>Minutes after which to notify (between 01:00 - 06:00)</name>
+                        <type>input</type>
+                        <default_value>60</default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+</addon>
