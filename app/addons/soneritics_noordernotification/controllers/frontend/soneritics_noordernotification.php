@@ -39,6 +39,8 @@ if ($mode === 'action') {
 
     $minutesSinceLastPaidOrder = round((time() - $lastPaidOrderTimestamp) / 60);
 
+    fn_clear_ob();
+
     if ($minutesSinceLastPaidOrder > $minutesForNotification) {
         $messageBird = new \MessageBird\Client($settings->getApiKey());
 
@@ -46,6 +48,8 @@ if ($mode === 'action') {
         $message->originator = $settings->getOriginator();
         $message->recipients = [$settings->getPhone()];
         $message->body = "Er zijn geen bestellingen gedaan in de afgelopen {$minutesForNotification} minuten.";
+
+        echo 'SMS message sent';
 
         try {
             $messageBird->messages->create($message);
@@ -56,8 +60,9 @@ if ($mode === 'action') {
         } catch (\Exception $e) {
             echo $e->getMessage();
         }
+    } else {
+        echo 'NoOp';
     }
 
-    fn_clear_ob();
-    die('OK');
+    die;
 }

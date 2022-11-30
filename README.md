@@ -1,5 +1,7 @@
 # CsCartSmsNotificationWhenNoOrders
-CsCart Google Sitemap regenerate via a cron job
+CsCart plugin to send an SMS message to a phone number when no orders have been completed in a given time.
+
+This can happen when, for example, a plugin causes the website to crash or when a payment provider is offline.
 
 ## Usage
 Open the following URL:
